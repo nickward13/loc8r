@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 # Setup environment variables
 ENV NODE_ENV production
-ENV MONGOLAB_URI mongodb://hectagon:doublepass@ds062889.mlab.com:62889/loc8r
+ENV MONGOLAB_URI mongodb://loc8r-hect:ZEqlqEdEmwJn8Kz6xpm24m2BowukZIqDnz7HxA4x8rWy1qPfsnZI0KzCTlgpXmBhyWAyAhCjerZbIDWF8RvYBA==@loc8r-hect.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
 
 # Install app dependencies
 COPY package.json /usr/src/app/
