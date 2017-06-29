@@ -1,7 +1,3 @@
-const appInsights = require("applicationinsights");
-appInsights.setup("9fe6adb2-675c-4118-bc40-b3b8ff2a8823");
-appInsights.start();
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,6 +9,10 @@ require('./app_api/models/db')
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
 var users = require('./app_server/routes/users');
+
+// Enable telemetry collection with Application Insights
+var ai = require('applicationinsights');
+ai.setup(process.env.APPLICATIONINSIGHTSKEY || '9fe6adb2-675c-4118-bc40-b3b8ff2a8823').start();
 
 var app = express();
 
