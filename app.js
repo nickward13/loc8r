@@ -1,7 +1,3 @@
-// Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -49,8 +45,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen(PORT, HOST);
-console.log('Running on http://' + HOST + ':' + PORT);
 
 module.exports = app;
