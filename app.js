@@ -1,3 +1,7 @@
+const appInsights = require("applicationinsights");
+appInsights.setup("9fe6adb2-675c-4118-bc40-b3b8ff2a8823");
+appInsights.start();
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
