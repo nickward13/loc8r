@@ -18,7 +18,7 @@ block content
               a(href="/location/#{location._id}")= location.name
               small &nbsp;
                 +outputRating(location.rating)
-              span.badge.pull-right.badge-default= location.distance
+              span.badge.pull-right.badge-default= location.distance + " km"
             p.address= location.address
             p
               each facility in location.facilities

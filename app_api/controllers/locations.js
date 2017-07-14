@@ -66,7 +66,7 @@ module.exports.locationsListByDistance = function (req, res) {
     };
     var geoOptions = {
         spherical: true,
-        maxDistance: theEarth.getRadsFromDistance(20),
+        maxDistance: 5000,
         num: 10
     };
     Loc.geoNear(point, geoOptions, function (err, results, stats) {
@@ -77,7 +77,7 @@ module.exports.locationsListByDistance = function (req, res) {
             console.log("result count: " + results.length);
             results.forEach(function(doc) {
                 locations.push({
-                    distance: theEarth.getDistanceFromRads(doc.dis),
+                    distance: Math.round((doc.dis / 1000)*100)/100,
                     name: doc.obj.name,
                     address: doc.obj.address,
                     rating: doc.obj.rating,

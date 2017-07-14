@@ -63,7 +63,11 @@ var renderDetailPage = function(req, res, locationDetail) {
 /* GET home page */
 module.exports.locationList = function(req, res){
     var requestOptions, path;
-    path = '/api/locations';
+    var lat, long;
+    lat = -37.8730680;
+    long = 145.0419910;
+    path = '/api/locations/nearby?lng=' + long + '&lat='+lat;
+    console.log('path request: ' + path);
     requestOptions = {
         url: apiOptions.server + path,
         method: "GET",
