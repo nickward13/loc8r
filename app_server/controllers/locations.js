@@ -5,7 +5,7 @@ var apiOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-    apiOptions.server = "https://loc8r-hect.azurewebsites.net"
+    apiOptions.server = process.env.API_ADDRESS
 }
 
 var _showError = function(req, res, status){
